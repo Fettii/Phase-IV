@@ -1,10 +1,10 @@
-#Global
+###################################################Global
 import ast
 
 rosterList = []
 stats = {}
 
-#this is where the general info about a basketball player
+###################################################this is where the general info about a basketball player
 class Players:
     def __init__(self, name,number,age,pos,height,weight):
         self.name = name
@@ -14,12 +14,12 @@ class Players:
         self.weight = weight
         self.number = number
     
-#this is where I will create player objects, at this time it will be limited to two players to represent a basketball player and for testing reasons
+###################################################this is where I will create player objects, at this time it will be limited to two players to represent a basketball player and for testing reasons
 p1 = Players("", "0", "0", "", "", "0")
 p2 = Players("", "0", "0", "", "", "0")
 
 
-#this is where the genreal info about how that player performs on the basketball court
+###################################################this is where the genreal info about how that player performs on the basketball court
 class Roster:
     def __init__(self,points,blocks,steals,rebounds,assists,fg,ft,threepointer,turnovers,plus_minus):
         self.points = points
@@ -33,7 +33,7 @@ class Roster:
         self.turnovers = turnovers
         self.plus_minus = plus_minus
     
-#This is the main menu section, will put all options in here
+###################################################This is the main menu section, will put all options in here
 def main_menu():
     
     print(" MAIN MENU ")
@@ -52,7 +52,7 @@ def main_menu():
         main_menu()
 # End of Main Menu section    
         
-# Option 1 section
+######################################### Option 1 section
 def option_1():
     print("     ROSTER  \n")
     print("1. Read Roster \n2. Add items \n5. Exit")
@@ -62,7 +62,7 @@ def option_1():
         print(reader.read())
         reader.close
         option_1()
-#Adds a player to the roster file
+##################################################Adds a player to the roster file 
     elif(option_select == "2"):
         if(p1.name == ""):
             enter_info = input("Please Enter player basic info in the following format *dont forget commas!* : Name, Age, Position, Height, Weight, Number ")
@@ -103,9 +103,9 @@ def option_1():
     else:
         print("option not availible")
         option_1()
-#End of option 1 section    
+###################################################End of option 1 section    
 
-#Start of Option 2 Section *THIS SECTION IS INCOMPLETE AT THIS TIME
+###################################################Start of Option 2 Section *THIS SECTION IS INCOMPLETE AT THIS TIME
 def option_2():
     print("     SEARCH PLAYERS  \n")
     print("1.   Search for players info by name\n2. Exit")
@@ -122,7 +122,7 @@ def option_2():
 
         
 
-#End of Option 2 Section
+###################################################End of Option 2 Section
     
 
 
