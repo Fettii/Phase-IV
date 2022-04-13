@@ -1,4 +1,4 @@
-
+import ast
 
 def read_roster():
     reader = open("Roster.txt","r")
@@ -14,7 +14,7 @@ def add_items():
     statbio = input("Okay, now enter stats in a similar format ex.(Points,Rebounds,Assists,Blocks,FG%,3point%,FT%,Turnovers,PlusMinus): ")
     playerbio = playerbio.split(",")
     statbio = statbio.split(",")
-    final = [{"Name" : playerbio[0],"Age": playerbio[1],"Position": playerbio[2],"Height": playerbio[3],"Weight": playerbio[4],"Number": playerbio[5]},{"Points" : statbio[0],"Rebounds": statbio[1],"Assists": statbio[2],"Blocks": statbio[3],"FG%": statbio[4],"3point%": statbio[5],"FT%": statbio[6],"Turnovers": statbio[7],"PlusMinus": statbio[8]}]
+    final = [{"name" : playerbio[0],"age": playerbio[1],"position": playerbio[2],"height": playerbio[3],"weight": playerbio[4],"number": playerbio[5]},{"points" : statbio[0],"rebounds": statbio[1],"assists": statbio[2],"blocks": statbio[3],"fg%": statbio[4],"3point%": statbio[5],"ft%": statbio[6],"turnovers": statbio[7],"plusMinus": statbio[8]}]
     reader.write(str(final))
     reader.close()
 
@@ -22,14 +22,29 @@ def add_items():
 
 
 def edit_items():
-    pass
+    reader = open("Roster.txt")
+    lines = reader.readlines()
+    keepGoing = True
+    while keepGoing:
+        new_edit = input("Please enter player's name in which you would like to edit or type 'quit' if finished editing: ")
+        if(new_edit == 'quit'):
+            keepGoing = False
+        else:
+            for line in lines:  # I need to figure out how to make loop skip blank lines or just make the program exactly that amount of text lines needed, this is because it is trying to make the blank line a dict which wont work
+                if line == '':
+                    pass
+                else:
+                    player_dict = ast.literal_eval(line)
+                    print(player_dict)
+
+
+
 def remove_items():
     pass
 
 
 
-add_items()
-read_roster()
+edit_items()
 
 
 
