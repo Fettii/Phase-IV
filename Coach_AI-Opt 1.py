@@ -23,7 +23,8 @@ def add_items():
 
 
 def edit_items():
-    reader = open("Roster.txt","r+")
+    counter = 0
+    reader = open("Roster.txt","r")
     lines = reader.readlines()
     keepGoing = True
     while keepGoing:
@@ -52,6 +53,10 @@ def edit_items():
                             else:                               
                                 new_val = input("ENTER NEW VALUE: ")
                                 player_dict[new_edit].update({stat_key:new_val})
+                                changed_line = line.replace(line,str(player_dict))
+                                print(player_dict)
+
+                    counter += 1
                                 
                                 
 

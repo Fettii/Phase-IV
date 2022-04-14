@@ -1,2 +1,1 @@
-{'Jalen Green' : {'Age' : 20, 'Position' : 'SG', 'Height': '6-4', 'Weight': 't', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8' }}
-{'Christian Wood' : {'Age' : 26, 'Position' : 'C', 'Height': '6-9', 'Weight': 't', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8' }}
+{'Jalen Green': {'Age': '20', 'Position': 'SG', 'Height': '6-4', 'Weight': '210', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8'}}
