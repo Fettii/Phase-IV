@@ -1,4 +1,5 @@
 import ast
+import fileinput
 
 def read_roster():
     reader = open("Roster.txt","r")
@@ -22,7 +23,7 @@ def add_items():
 
 
 def edit_items():
-    reader = open("Roster.txt")
+    reader = open("Roster.txt","r+")
     lines = reader.readlines()
     keepGoing = True
     while keepGoing:
@@ -31,11 +32,31 @@ def edit_items():
             keepGoing = False
         else:
             for line in lines:  # I need to figure out how to make loop skip blank lines or just make the program exactly that amount of text lines needed, this is because it is trying to make the blank line a dict which wont work
-                if line == '':
+                statChanging = True
+                if line == '': #this tells program, since emtpy line is false, to skip it
                     pass
                 else:
                     player_dict = ast.literal_eval(line)
-                    print(player_dict)
+                    
+                    if player_dict.get(new_edit) == None:
+                        print("not found")
+                    else:
+                        print("Found!")
+                        print(player_dict.get(new_edit))
+                        while statChanging:
+                            stat_key = input("Which stat would you like to change? Or would you like to stop editing this playing (type 'quit')?: ")
+                            if stat_key == "quit":
+                                break
+                            elif player_dict[new_edit].get(stat_key) == None:
+                                print("This stat doesnt exsist, make sure you captitalize the first letter of what stat you want to edit (ex. 'Age')")
+                            else:                               
+                                new_val = input("ENTER NEW VALUE: ")
+                                player_dict[new_edit].update({stat_key:new_val})
+                                
+                                
+
+
+
 
 
 
