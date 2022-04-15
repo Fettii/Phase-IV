@@ -1,23 +1,40 @@
 import ast
-import fileinput
+import main 
+
+
+def add_search_menu():
+    user_input = input("\nPlease enter a number to select a command or type quit to exit this section\n1. Read roster\n2. Add Items\n3. Edit Items\nQuit\n")
+    if(user_input == "1"):
+        read_roster()
+    elif(user_input == "2"):
+        add_items()
+    elif(user_input == "3"):
+        edit_items()
+    elif(user_input == "quit"):
+        main.central()
+    else:
+        print("Not a option, try again buddy")
+        add_search_menu()
 
 def read_roster():
     reader = open("Roster.txt","r")
-    print(reader.readlines())
+    print(reader.readlines(),"\n")
     reader.close()
+    add_search_menu()
     
 
     
 def add_items():
 
     reader = open("Roster.txt","a")
-    playerbio = input("Please enter the asked info in this format example (Name,Age,Primary Position,Height,Weight,Jersey Number): ")
-    statbio = input("Okay, now enter stats in a similar format ex.(Points,Rebounds,Assists,Blocks,FG%,3point%,FT%,Turnovers,PlusMinus): ")
+    playerbio = input(("Please enter the asked info in this format example (Name,Age,Primary Position,Height,Weight,Jersey Number): ") or "0")
+    statbio = input(("Okay, now enter stats in a similar format ex.(Points,Rebounds,Assists,Blocks,FG%,3point%,FT%,Turnovers,PlusMinus): ") or "0")
     playerbio = playerbio.split(",")
     statbio = statbio.split(",")
-    final = [{"name" : playerbio[0],"age": playerbio[1],"position": playerbio[2],"height": playerbio[3],"weight": playerbio[4],"number": playerbio[5]},{"points" : statbio[0],"rebounds": statbio[1],"assists": statbio[2],"blocks": statbio[3],"fg%": statbio[4],"3point%": statbio[5],"ft%": statbio[6],"turnovers": statbio[7],"plusMinus": statbio[8]}]
+    final = {playerbio[0] :{ "age": playerbio[1],"position": playerbio[2],"height": playerbio[3],"weight": playerbio[4],"number": playerbio[5],"points" : statbio[0],"rebounds": statbio[1],"assists": statbio[2],"blocks": statbio[3],"fg%": statbio[4],"3point%": statbio[5],"ft%": statbio[6],"turnovers": statbio[7],"plusMinus": statbio[8]}}
     reader.write(str(final))
     reader.close()
+    add_search_menu()
 
     
 
@@ -58,24 +75,8 @@ def edit_items():
 
                     counter += 1
                                 
-                                
-
-
-
-
+    add_search_menu()
 
 
 def remove_items():
     pass
-
-
-
-edit_items()
-
-
-
-
-
-
-
-
