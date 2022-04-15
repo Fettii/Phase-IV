@@ -1,4 +1,6 @@
 import ast
+import sys 
+import fileinput
 
 ###################################################this is where the general info about a basketball player
 class Players:
@@ -22,7 +24,7 @@ class Roster:
 def central():
     
     print(" MAIN MENU ")
-    print("\n1.  Read\Edit Roster\n2.  Search Players\n3.   Sort Players\n8.  Quit\n")
+    print("\n1.  Read\Edit Roster\n2.  Search Players\n3.   Sort Players\nEnter 'quit' to exit program\n")
     option_select = input()
     if(option_select == "1"):
         opt1_menu()
@@ -30,7 +32,7 @@ def central():
         opt2_menu()
     elif(option_select == "3"):
         opt3_menu()
-    elif(option_select == "8"):
+    elif(option_select == "quit"):
         print("Goodbye")
         quit()
     else:
@@ -81,13 +83,14 @@ def add_items():
 
 def edit_items():
     counter = 0
-    reader = open("Roster.txt","r")
+    reader = open("Roster.txt","r+")
     lines = reader.readlines()
     keepGoing = True
     while keepGoing:
         new_edit = input("Please enter player's name in which you would like to edit or type 'quit' if finished editing: ")
         if(new_edit == 'quit'):
             keepGoing = False
+            reader.close()
         else:
             for line in lines:  # I need to figure out how to make loop skip blank lines or just make the program exactly that amount of text lines needed, this is because it is trying to make the blank line a dict which wont work
                 statChanging = True
@@ -109,16 +112,21 @@ def edit_items():
                                 print("This stat doesnt exsist, make sure you captitalize the first letter of what stat you want to edit (ex. 'Age')")
                             else:                               
                                 new_val = input("ENTER NEW VALUE: ")
-                                player_dict[new_edit].update({stat_key:new_val})
-                                changed_line = line.replace(line,str(player_dict))
+                                player_dict[new_edit].update({stat_key:new_val})                                
                                 print(player_dict)
+                                for line in lines:
+                                    if new_edit in line:
+                                        new_line = line.replace(line,str(player_dict)) + "\n"
+                                        reader.write(new_line)
+
+                                        
+
+
+                                
 
                     counter += 1
                                 
     opt1_menu()
-
-
-
 
 
 
@@ -142,7 +150,7 @@ def add_filter():
     
     opt2_menu()
     
-#################################################################### OPTION 3 SECTION STARTS HERE
+#################################################################### OPTION 3 SECTION STARTS HERE ***OPTION 3 IS INCOMPLETE***
 
 def opt3_menu():
     print("\nSORT MENU:\nYou can sort by typing in these filters (name,age,position,height,weight,points,rebounds,assists,blocks,steals,)) or type quit to exit ")
