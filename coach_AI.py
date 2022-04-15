@@ -1,8 +1,46 @@
 import ast
-import main 
 
+###################################################this is where the general info about a basketball player
+class Players:
+    def __init__(self, name,age,pos,height,weight):
+        self.name = name
+        self.age = age
+        self.pos = pos 
+        self.height = height
+        self.weight = weight
 
-def add_search_menu():
+###################################################this is where the genreal info about how that player performs on the basketball court
+class Roster:
+    def __init__(self,points,blocks,steals,rebounds,assists):
+        self.points = points
+        self.blocks = blocks
+        self.steals = steals
+        self.rebounds = rebounds
+        self.assists = assists
+
+###################################################This is the main menu section, will put all options in here
+def central():
+    
+    print(" MAIN MENU ")
+    print("\n1.  Read\Edit Roster\n2.  Search Players\n3.   Sort Players\n8.  Quit\n")
+    option_select = input()
+    if(option_select == "1"):
+        opt1_menu()
+    elif(option_select == "2"):
+        opt2_menu()
+    elif(option_select == "3"):
+        opt3_menu()
+    elif(option_select == "8"):
+        print("Goodbye")
+        quit()
+    else:
+        print("try a valid command please")
+        central()
+# End of Main Menu section   
+
+#################################################################### OPTION 1 SECTION STARTS HERE
+
+def opt1_menu():
     user_input = input("\nPlease enter a number to select a command or type quit to exit this section\n1. Read roster\n2. Add Items\n3. Edit Items\nQuit\n")
     if(user_input == "1"):
         read_roster()
@@ -11,16 +49,18 @@ def add_search_menu():
     elif(user_input == "3"):
         edit_items()
     elif(user_input == "quit"):
-        main.central()
+        central()
     else:
         print("Not a option, try again buddy")
-        add_search_menu()
+        opt1_menu()
 
 def read_roster():
     reader = open("Roster.txt","r")
-    print(reader.readlines(),"\n")
+    #print(reader.readlines(),"\n")
+    for line in reader.readlines():
+        print("\n"+line)
     reader.close()
-    add_search_menu()
+    opt1_menu()
     
 
     
@@ -32,9 +72,9 @@ def add_items():
     playerbio = playerbio.split(",")
     statbio = statbio.split(",")
     final = {playerbio[0] :{ "age": playerbio[1],"position": playerbio[2],"height": playerbio[3],"weight": playerbio[4],"points" : statbio[0],"rebounds": statbio[1],"assists": statbio[2],"blocks": statbio[3],"steals":statbio[4]}}
-    reader.write(str(final))
+    reader.write("\n"+str(final))
     reader.close()
-    add_search_menu()
+    opt1_menu()
 
     
 
@@ -75,8 +115,44 @@ def edit_items():
 
                     counter += 1
                                 
-    add_search_menu()
+    opt1_menu()
 
 
-def remove_items():
-    pass
+
+
+
+
+#################################################################### OPTION 2 SECTION STARTS HERE
+
+def opt2_menu():
+    user_input = input("\nSearch Players - Please type a number or type quit to exit\n\n1. Add filter\n\n")
+    if(user_input == "1"):
+        add_filter()
+    elif(user_input == "quit"):
+        central()
+    else:
+        print("Sorry thats not a known command, try again")   
+        opt2_menu() 
+    
+def add_filter(): 
+    word = input("Please enter phrase to filter for:    ")
+    doggy = [line for line in open('Roster.txt') if word in line]
+    print(doggy)    
+    
+    
+    opt2_menu()
+    
+#################################################################### OPTION 3 SECTION STARTS HERE
+
+def opt3_menu():
+    print("\nSORT MENU:\nYou can sort by typing in these filters (name,age,position,height,weight,points,rebounds,assists,blocks,steals,)) or type quit to exit ")
+    user_input = input("ENTER SORT FILTER: ")
+    if user_input == "name":
+        writer = open('Roster.txt','r+')
+        lines = writer.readlines()
+        for line in lines:
+            print(line)
+        
+
+
+central()

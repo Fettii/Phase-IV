@@ -1,1 +1,6 @@
-{'Jalen Green': {'Age': '20', 'Position': 'SG', 'Height': '6-4', 'Weight': '210', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8'}}
+{'Lebron James': {'age': '37', 'position': 'SF', 'height': '6-8', 'weight': '250', 'points': '28.2', 'rebounds': '7.8', 'assists': '11', 'blocks': '4', 'steals': '1.7'}}
+{'Carmelo Anthony': {'age': '37', 'position': 'SF', 'height': '6-8', 'weight': '238', 'points': '28.2', 'rebounds': '7.8', 'assists': '11', 'blocks': '4', 'steals': '1.7'}}
+{'Anthony Davis': {'age': '29', 'position': 'SF', 'height': '6-8', 'weight': '253', 'points': '28.2', 'rebounds': '7.8', 'assists': '11', 'blocks': '4', 'steals': '1.7'}}
+{'Russell Westbrook': {'age': '33', 'position': 'SF', 'height': '6-8', 'weight': '200', 'points': '28.2', 'rebounds': '7.8', 'assists': '11', 'blocks': '4', 'steals': '1.7'}}
+{'Dwight Howard': {'age': '36', 'position': 'C', 'height': '6-10', 'weight': '265', 'points': '6.2', 'rebounds': '5.9', 'assists': '0.6', 'blocks': '.6', 'steals': '.6'}}
+{'Dude': {'age': '19', 'position': '23', 'height': '23', 'weight': '23', 'points': '23', 'rebounds': '23', 'assists': '23', 'blocks': '23', 'steals': '23'}}
