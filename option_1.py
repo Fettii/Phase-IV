@@ -27,11 +27,11 @@ def read_roster():
 def add_items():
 
     reader = open("Roster.txt","a")
-    playerbio = input(("Please enter the asked info in this format example (Name,Age,Primary Position,Height,Weight,Jersey Number): ") or "0")
-    statbio = input(("Okay, now enter stats in a similar format ex.(Points,Rebounds,Assists,Blocks,FG%,3point%,FT%,Turnovers,PlusMinus): ") or "0")
+    playerbio = input(("Please enter the asked info in this format example (Name,Age,Primary Position,Height,Weight): ") or "0")
+    statbio = input(("Okay, now enter stats in a similar format ex.(Points,Rebounds,Assists,Blocks,steals): ") or "0")
     playerbio = playerbio.split(",")
     statbio = statbio.split(",")
-    final = {playerbio[0] :{ "age": playerbio[1],"position": playerbio[2],"height": playerbio[3],"weight": playerbio[4],"number": playerbio[5],"points" : statbio[0],"rebounds": statbio[1],"assists": statbio[2],"blocks": statbio[3],"fg%": statbio[4],"3point%": statbio[5],"ft%": statbio[6],"turnovers": statbio[7],"plusMinus": statbio[8]}}
+    final = {playerbio[0] :{ "age": playerbio[1],"position": playerbio[2],"height": playerbio[3],"weight": playerbio[4],"points" : statbio[0],"rebounds": statbio[1],"assists": statbio[2],"blocks": statbio[3],"steals":statbio[4]}}
     reader.write(str(final))
     reader.close()
     add_search_menu()

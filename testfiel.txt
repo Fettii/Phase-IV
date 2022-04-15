@@ -1,3 +1,0 @@
-{'Jalen Green': {'Age': '21', 'Position': 'Guard', 'Height': '6'4', 'Weight': 't', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8'}}
-{'Bob': {'Age': '21', 'Position': 'Guard', 'Height': '6'4', 'Weight': 't', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8'}}
-{'Pops': {'Age': '21', 'Position': 'Guard', 'Height': '6'4', 'Weight': 't', 'Number': 'y', 'Points': '0', 'Rebounds': '1', 'Assists': '2', 'Blocks': '3', 'FG%': '4', '3point%': '5', 'FT%': '6', 'Turnovers': '7', 'PlusMinus': '8'}}
